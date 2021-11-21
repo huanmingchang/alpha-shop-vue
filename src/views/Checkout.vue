@@ -2,6 +2,7 @@
   <main class="main">
     <div class="main__title">結帳</div>
     <Stepper />
+    <FormPanel />
     <ShoppingCart />
     <ButtonPanel />
   </main>
@@ -9,14 +10,16 @@
 
 <script>
 import Stepper from '../components/Stepper'
+import FormPanel from '../components/FormPanel'
 import ShoppingCart from '../components/ShoppingCart'
 import ButtonPanel from '../components/ButtonPanel'
 
 export default {
   name: 'Cart',
   components: {
-    ShoppingCart,
     Stepper,
+    FormPanel,
+    ShoppingCart,
     ButtonPanel,
   },
 }

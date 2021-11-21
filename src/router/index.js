@@ -7,10 +7,20 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/',
+    name: 'root',
+    redirect: '/checkout',
+  },
+  {
     path: '/checkout',
     name: 'cart',
     component: Checkout,
   },
+  // {
+  //   path: '/checkout/:step',
+  //   name: 'cart',
+  //   component: Checkout,
+  // },
   {
     path: '*',
     name: 'not-found',
