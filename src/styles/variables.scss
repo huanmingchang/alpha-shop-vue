@@ -1,46 +1,44 @@
 $white: #ffffff;
 $black: #333333;
 
-:root {
-  --bg-color: $white;
-  --white: $white;
-  --font-color: #2a2a2a;
-  --black: $black;
-  --neutrals-grey: #afb1bd;
-  --neutrals-black: #000000;
-  --pale-grey: #f0f0f5;
-  --border-grey: #e6e6eb;
-  --pink: #f67599;
-  --footer: #e5e5e5;
-  --footer-grey: #808080;
-  --input-border-grey: #4a4a4a;
-  --placeholder-grey: #999999;
-  --radio-color: #222222;
-  --cart-container: $white;
-  --delivery-time: rgba(0, 0, 0);
-  --radio-background: $white;
-  --radio-check: #2a2a2a;
-  --radio-check-background: $white;
-}
+$bg-color: $white;
+$white: $white;
+$font-color: #2a2a2a;
+$black: $black;
+$neutrals-grey: #afb1bd;
+$neutrals-black: #000000;
+$pale-grey: #f0f0f5;
+$border-grey: #e6e6eb;
+$pink: #f67599;
+$footer: #e5e5e5;
+$footer-grey: #808080;
+$input-border-grey: #4a4a4a;
+$placeholder-grey: #999999;
+$radio-color: #222222;
+$cart-container: $white;
+$delivery-time: rgba(0, 0, 0);
+$radio-background: $white;
+$radio-check: #2a2a2a;
+$radio-check-background: $white;
 
-.dark-theme {
-  --bg-color: #121212;
-  --white: $white;
-  --font-color: $white;
-  --black: $black;
-  --neutrals-grey: #afb1bd;
-  --neutrals-black: $white;
-  --pale-grey: #5e5e5e;
-  --border-grey: rgba(255, 255, 255, 0.2);
-  --pink: #f67599;
-  --footer: $black;
-  --footer-grey: #808080;
-  --input-border-grey: #5e5e5e;
-  --placeholder-grey: #999999;
-  --radio-color: $black;
-  --cart-container: #383838;
-  --delivery-time: rgba(255, 255, 255, 0.4);
-  --radio-background: $black;
-  --radio-check: $black;
-  --radio-check-background: $white;
-}
+// .dark-theme {
+//   --bg-color: #121212;
+//   --white: $white;
+//   --font-color: $white;
+//   --black: $black;
+//   --neutrals-grey: #afb1bd;
+//   --neutrals-black: $white;
+//   --pale-grey: #5e5e5e;
+//   --border-grey: rgba(255, 255, 255, 0.2);
+//   --pink: #f67599;
+//   --footer: $black;
+//   --footer-grey: #808080;
+//   --input-border-grey: #5e5e5e;
+//   --placeholder-grey: #999999;
+//   --radio-color: $black;
+//   --cart-container: #383838;
+//   --delivery-time: rgba(255, 255, 255, 0.4);
+//   --radio-background: $black;
+//   --radio-check: $black;
+//   --radio-check-background: $white;
+// }

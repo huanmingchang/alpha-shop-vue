@@ -103,7 +103,7 @@ nav {
     height: 394px;
     margin-top: 1rem;
     z-index: 10;
-    background: var(--bg-color);
+    background: $bg-color;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     &__menu {
       @include flex(column, start, center);
@@ -115,7 +115,7 @@ nav {
         font-size: 1rem;
         font-weight: 500;
         line-height: 24px;
-        color: var(--font-color);
+        color: $font-color;
         border-bottom: 1px solid rgba(42, 42, 42, 0.1);
       }
       a:first-child {
