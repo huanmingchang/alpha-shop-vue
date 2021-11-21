@@ -1,0 +1,22 @@
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin position($position, $top, $left, $translateX, $translateY) {
+  position: $position;
+  top: $top;
+  left: $left;
+  transform: translate($translateX, $translateY);
+}
+
+@mixin getStepNums($num) {
+  @for $i from 1 through $num {
+    &:nth-child(#{$i})
+      .main__stepper-panel__container__step--circle-container::after {
+      content: '#{$i}';
+    }
+  }
+}
