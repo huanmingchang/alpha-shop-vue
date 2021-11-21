@@ -4,6 +4,7 @@
 
 <style scoped lang="scss">
 h1 {
+  margin: 15rem auto;
   text-align: center;
 }
 </style>
