@@ -1,0 +1,82 @@
+<template>
+  <div class="main__button-panel">
+    <button class="main__button-panel__btn btn-outline d-none">上一步</button>
+    <button class="main__button-panel__btn btn-primary first-step">
+      下一步
+    </button>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'ButtonPanel',
+}
+</script>
+
+<style lang="scss" scoped>
+@import '../styles/reset.scss';
+@import '../styles/variables.scss';
+@import '../styles/mixins.scss';
+@import '../styles/layout.scss';
+@import '../styles/size.scss';
+
+.main__button-panel {
+  @include flex(row, space-between, center);
+  margin-top: 2rem;
+  padding: 24px 0 40px;
+  border-top: 1px solid $border-grey;
+  &__btn {
+    width: 156px;
+    height: 46px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    border-radius: 8px;
+  }
+  .first-step {
+    width: 100%;
+  }
+
+  .last-step::after {
+    display: none;
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: $neutrals-black;
+  }
+  .btn-primary {
+    background: $pink;
+    color: $white;
+  }
+  .btn-outline::before {
+    content: '\2190';
+    width: 24px;
+    height: 24px;
+    margin-right: 12.5px;
+  }
+  .btn-primary::after {
+    content: '\2192';
+    width: 24px;
+    height: 24px;
+    margin-left: 13.5px;
+  }
+}
+
+@media (min-width: 768px) {
+  .main__button-panel {
+    grid-area: button-panel;
+    padding: 24px 0 0;
+    &__btn {
+      width: 174px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 17px;
+    }
+    .first-step {
+      margin-left: auto;
+      width: 174px;
+    }
+  }
+}
+</style>

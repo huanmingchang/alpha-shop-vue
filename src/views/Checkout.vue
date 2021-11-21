@@ -3,17 +3,21 @@
     <div class="main__title">結帳</div>
     <Stepper />
     <ShoppingCart />
+    <ButtonPanel />
   </main>
 </template>
 
 <script>
 import Stepper from '../components/Stepper'
 import ShoppingCart from '../components/ShoppingCart'
+import ButtonPanel from '../components/ButtonPanel'
+
 export default {
   name: 'Cart',
   components: {
     ShoppingCart,
     Stepper,
+    ButtonPanel,
   },
 }
 </script>
