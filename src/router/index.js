@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Checkout from '../views/Checkout.vue'
+import CheckOut from '../views/Checkout.vue'
 import NotFound from '../views/NotFound.vue'
 
 Vue.use(VueRouter)
@@ -9,18 +9,30 @@ const routes = [
   {
     path: '/',
     name: 'root',
-    redirect: '/checkout',
+    redirect: '/checkout/1',
   },
   {
     path: '/checkout',
-    name: 'cart',
-    component: Checkout,
+    name: 'checkout',
+    component: CheckOut,
+    children: [
+      {
+        path: '1',
+        name: 'first-step',
+        component: () => import('../components/FormOne.vue'),
+      },
+      {
+        path: '2',
+        name: 'second-step',
+        component: () => import('../components/FormTwo.vue'),
+      },
+      {
+        path: '3',
+        name: 'third-step',
+        component: () => import('../components/FormThree.vue'),
+      },
+    ],
   },
-  // {
-  //   path: '/checkout/:step',
-  //   name: 'cart',
-  //   component: Checkout,
-  // },
   {
     path: '*',
     name: 'not-found',

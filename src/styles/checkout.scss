@@ -1,12 +1,12 @@
-@import './reset';
-@import './color';
-@import './size';
-@import './layout';
+.main {
+  margin: 0 15px;
+}
 
-%position-center {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+.main__title {
+  margin: 1rem 0 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 38px;
 }
 
 @media (min-width: 576px) {
@@ -15,10 +15,10 @@
     margin: 0 auto;
   }
 }
-
 @media (min-width: 768px) {
-  .main__cart {
-    grid-area: cart;
+  .main__title {
+    margin: 5rem 0 3rem;
+    font-size: 2rem;
   }
 }
 
@@ -34,5 +34,19 @@
       'stepper-panel stepper-panel stepper-panel stepper-panel stepper-panel stepper-panel . cart cart cart cart cart'
       'form-panel form-panel form-panel form-panel form-panel form-panel . cart cart cart cart cart'
       'button-panel button-panel button-panel button-panel button-panel button-panel . cart cart cart cart cart';
+  }
+}
+
+@media (min-width: 1200px) {
+  .main {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+
+@media (min-width: 1400px) {
+  .main {
+    max-width: 1440px;
   }
 }
