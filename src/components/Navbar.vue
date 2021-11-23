@@ -1,7 +1,12 @@
 <template>
   <nav id="navbar">
-    <img :src="images.hamburger" alt="" class="hamburger" />
-    <div class="nav-container">
+    <img
+      :src="images.hamburger"
+      alt=""
+      class="hamburger"
+      @click.prevent.stop="hamburgerOnClick"
+    />
+    <div class="nav-container d-none">
       <div class="nav-wrapper">
         <div class="nav-wrapper__menu">
           <router-link
@@ -79,6 +84,11 @@ export default {
       ],
     }
   },
+  methods: {
+    hamburgerOnClick() {
+      const navContainer = document.querySelector('.nav-container')
+      navContainer.classList.toggle('d-none')
+    },
+  },
 }
 </script>
-
