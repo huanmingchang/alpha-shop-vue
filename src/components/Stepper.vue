@@ -8,7 +8,13 @@
         justify-content-between
       "
     >
-      <div class="main__stepper-panel__container__step initial">
+      <div
+        class="main__stepper-panel__container__step"
+        :class="{
+          initial: currentStep === 1,
+          checked: currentStep === 2 || currentStep === 3,
+        }"
+      >
         <div
           class="main__stepper-panel__container__step--circle-container"
         ></div>
@@ -19,7 +25,10 @@
           寄送地址
         </div>
       </div>
-      <div class="main__stepper-panel__container__step">
+      <div
+        class="main__stepper-panel__container__step"
+        :class="{ active: currentStep === 2, checked: currentStep === 3 }"
+      >
         <div
           class="main__stepper-panel__container__step--circle-container"
         ></div>
@@ -30,7 +39,10 @@
           運送方式
         </div>
       </div>
-      <div class="main__stepper-panel__container__step">
+      <div
+        class="main__stepper-panel__container__step"
+        :class="{ active: currentStep === 3 }"
+      >
         <div
           class="main__stepper-panel__container__step--circle-container"
         ></div>
@@ -45,5 +57,11 @@
 <script>
 export default {
   name: 'Stepper',
+  props: {
+    currentStep: {
+      type: Number,
+      required: true,
+    },
+  },
 }
 </script>
