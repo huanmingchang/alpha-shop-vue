@@ -68,6 +68,12 @@ import { v4 as uuidv4 } from 'uuid'
 
 export default {
   name: 'ShoppingCart',
+  props: {
+    initialDelivery: {
+      type: String,
+      required: true,
+    },
+  },
   data() {
     return {
       products: [
@@ -90,9 +96,20 @@ export default {
         freight: '免費',
         price: 5298,
       },
+      delivery: '',
     }
   },
   methods: {
+    fetchDelivery() {
+      this.delivery = this.initialDelivery
+
+      if (this.delivery === 'general') {
+        this.summary.freight = '免費'
+      }
+      if (this.delivery === 'dhl') {
+        this.summary.freight = '500'
+      }
+    },
     addButtonClick(productId) {
       this.products.forEach((product) => {
         if (product.id === productId) {
@@ -116,12 +133,22 @@ export default {
       const total = Object.values(this.products).map(
         (product) => product.price * product.qty
       )
-      const newTotal = total.reduce((total, freight) => total + freight)
+      const newTotal = total.reduce((prev, curr) => prev + curr) + freight
       this.summary.price = newTotal
     },
   },
+  created() {
+    this.fetchDelivery()
+  },
   updated() {
     this.calculateTotalAmount()
+  },
+  watch: {
+    initialDelivery: {
+      handler: function () {
+        this.fetchDelivery()
+      },
+    },
   },
   filters: {
     addNumberComma(price) {

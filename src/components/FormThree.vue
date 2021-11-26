@@ -45,21 +45,21 @@
 <script>
 export default {
   name: 'FormThree',
-  data() {
-    return {
-      userInfo: {
-        gender: '',
-        name: '',
-        phone: '',
-        email: '',
-        city: '',
-        address: '',
+  props: {
+    initialUserInfo: {
+      type: Object,
+      default: () => ({
         delivery: '',
         cardname: '',
         cardnumber: '',
         validity: '',
         cvc: '',
-      },
+      }),
+    },
+  },
+  data() {
+    return {
+      userInfo: this.initialUserInfo,
     }
   },
 }

@@ -10,10 +10,11 @@
           type="radio"
           name="delivery"
           value="general"
+          checked
           class="standard delivery checked"
           id="standard-delivery"
-          checked
-          v-model="userInfo.delivery"
+          v-model="delivery"
+          @change.prevent.stop="handleRadioBorder"
         />
         <label for="standard-delivery" class="standard delivery-content">
           <div class="delivery-content__details">
@@ -30,7 +31,8 @@
           value="dhl"
           class="dhl delivery"
           id="dhl-delivery"
-          v-model="userInfo.delivery"
+          v-model="delivery"
+          @change.prevent.stop="handleRadioBorder"
         />
         <label
           for="dhl-delivery"
@@ -51,23 +53,42 @@
 <script>
 export default {
   name: 'FormTwo',
+  props: {
+    initialUserInfo: {
+      type: Object,
+      default: () => ({
+        delivery: '',
+      }),
+    },
+  },
   data() {
     return {
-      userInfo: {
-        gender: '',
-        name: '',
-        phone: '',
-        email: '',
-        city: '',
-        address: '',
-        delivery: '',
-        cardname: '',
-        cardnumber: '',
-        validity: '',
-        cvc: '',
-      },
+      delivery: this.initialUserInfo.delivery,
     }
+  },
+  methods: {
+    handleRadioBorder(e) {
+      const standardRadioWrapper = document.querySelector(
+        '#standard-delivery-wrapper'
+      )
+      const dhlRadioWrapper = document.querySelector('#dhl-delivery-wrapper')
+      if (e.target.classList.contains('dhl')) {
+        standardRadioWrapper.classList.remove('checked')
+        dhlRadioWrapper.classList.add('checked')
+      }
+      if (e.target.classList.contains('standard')) {
+        standardRadioWrapper.classList.add('checked')
+        dhlRadioWrapper.classList.remove('checked')
+      }
+    },
+  },
+  watch: {
+    delivery: {
+      handler: function changeDelivery() {
+        this.$emit('change-delivery', this.delivery)
+      },
+      deep: true,
+    },
   },
 }
 </script>
-

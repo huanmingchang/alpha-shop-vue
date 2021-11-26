@@ -69,6 +69,19 @@
 <script>
 export default {
   name: 'FormOne',
+  props: {
+    initialUserInfo: {
+      type: Object,
+      default: () => ({
+        gender: '',
+        name: '',
+        phone: '',
+        email: '',
+        city: '',
+        address: '',
+      }),
+    },
+  },
   data() {
     return {
       defaultCities: [
@@ -79,19 +92,7 @@ export default {
         '台南市',
         '高雄市',
       ],
-      userInfo: {
-        gender: '',
-        name: '',
-        phone: '',
-        email: '',
-        city: '',
-        address: '',
-        delivery: '',
-        cardname: '',
-        cardnumber: '',
-        validity: '',
-        cvc: '',
-      },
+      userInfo: this.initialUserInfo,
     }
   },
 }

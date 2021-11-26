@@ -18,17 +18,17 @@ const routes = [
     children: [
       {
         path: '1',
-        name: 'first-step',
+        name: '1',
         component: () => import('../components/FormOne.vue'),
       },
       {
         path: '2',
-        name: 'second-step',
+        name: '2',
         component: () => import('../components/FormTwo.vue'),
       },
       {
         path: '3',
-        name: 'third-step',
+        name: '3',
         component: () => import('../components/FormThree.vue'),
       },
     ],
